@@ -1,3 +1,4 @@
+// dummy data for products
 const products = [
     {
         id: 1,
