@@ -1,6 +1,5 @@
 /**
- * Project: create an express api
- * users, products, order
+ * a mini app?
  */
 const express = require("express");
 const bodyParser = require("body-parser");
