@@ -50,4 +50,15 @@ router
     if(user) res.json(user);
     else next();
   })
+  .delete((req,res,next)=>{
+    const user = users.find((u,i)=>{
+      if(u.id == req.params.id){
+        users.splice(i,1);
+        return true;
+      }
+    });
+
+    if(user) res.json(user);
+    else next();
+  })
 module.exports = router;
