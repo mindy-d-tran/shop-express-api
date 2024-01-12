@@ -28,6 +28,13 @@ router
       users.push(user);
       res.json(user);
     } else res.json({error: "not enough data"});
-  });
+});
 
+router
+  .route('/:id')
+  .get((req,res, next)=>{
+    const user = users.find((u) => u.id == req.params.id);
+    if(user) res.json(user);
+    else next();
+  })
 module.exports = router;
