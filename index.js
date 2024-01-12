@@ -29,4 +29,9 @@ app.use('/api/',api)
 app.get('/', (req,res)=>{
     res.send('i am alive!');
 })
+app.all('*', (req,res)=>{
+    res.status = 404;
+    res.send("404 can't find the page")
+})
+
 app.listen(port, () => console.log("server port: " + port));
