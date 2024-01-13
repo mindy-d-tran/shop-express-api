@@ -15,7 +15,7 @@ router
             trackingNumber: req.body.trackingNumber,
             orderDate: `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`,
             orderList: req.body.orderList,
-            total: req.body.orderList.reduce((tempSum, element)=> tempSum + element.price,0)
+            total: req.body.orderList.reduce((tempSum, element)=> tempSum + (element.price * element.quantity),0)
         }
         orders.push(order);
         res.json(order);
