@@ -22,4 +22,21 @@ router
     } else res.json({error: 'not enough data'});
 });
 
+router
+    .route('/:id')
+    .get((req,res,next)=>{
+        const order = orders.find((o)=> o.id == req.params.id);
+        if(order) res.json(order);
+        else next();
+    })
+    .delete((req,res,next)=>{
+        const order = orders.find((o,i)=>{
+            if(this.prototype.id == req.params.id){
+                orders.splice(i,1);
+                return true;
+            }
+        });
+        if(order) res.json(order);
+        else next();
+    })
 module.exports = router;
