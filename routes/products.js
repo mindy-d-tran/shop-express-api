@@ -23,7 +23,7 @@ router
 
 router
   .route("/:id")
-  .get((req, res) => {
+  .get((req, res, next) => {
     const product = products.find((p) => p.id == req.params.id);
     if (product) res.json(product);
     else next();
@@ -50,5 +50,5 @@ router
       if (product) res.json(product);
       else next();
   });
-  
+
 module.exports = router;
