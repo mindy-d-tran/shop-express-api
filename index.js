@@ -18,7 +18,8 @@ app.engine("owo", (filePath, options, callback) => {
     const render = content
       .toString()
       .replace("#title#", `<title>${options.title}</title>`)
-      .replace("#content#", `<h1>${options.content}</h1>`);
+      .replace("#content#", `<h1>${options.content}</h1>`)
+      .replace("#table-row#", options.tableRow);
     return callback(null, render);
   });
 });
