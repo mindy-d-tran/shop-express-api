@@ -6,6 +6,16 @@ const products = require("../data/products");
 router
   .route("/")
   .get((req, res) => {
+    const productName = req.query.listingName;
+    //query for product ID
+    if (productName) {
+      const productList = [];
+      products.forEach((p) => {
+        if (p.listingName.includes(productName)) productList.push(p);
+      });
+      res.json(productList);
+      return;
+    }
     res.json(products);
   })
   .post((req, res) => {
@@ -42,13 +52,13 @@ router
   })
   .delete((req, res, next) => {
     const product = products.find((p, i) => {
-        if (p.id == req.params.id) {
-          products.splice(i,1);
-          return true;
-        }
-      });
-      if (product) res.json(product);
-      else next();
+      if (p.id == req.params.id) {
+        products.splice(i, 1);
+        return true;
+      }
+    });
+    if (product) res.json(product);
+    else next();
   });
 
 module.exports = router;
