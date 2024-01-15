@@ -1,6 +1,7 @@
 /**
  * a mini app?
  */
+const fs = require("fs");
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -9,6 +10,21 @@ const api = require("./routes/api");
 
 const app = express();
 const port = 3000;
+
+app.engine("owo", (filePath, options, callback) => {
+  fs.readFile(filePath, (err, content) => {
+    if (err) return callback(err);
+
+    const render = content
+      .toString()
+      .replace("#title#", `<title>${options.title}</title>`)
+      .replace("#message#", `<h1>${options.message}</h1>`);
+    return callback(null, render);
+  });
+});
+app.use(express.static('./styles'));
+app.set("views", "./views");
+app.set("view engine", "owo");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
