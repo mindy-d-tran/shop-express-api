@@ -18,7 +18,7 @@ app.engine("owo", (filePath, options, callback) => {
     const render = content
       .toString()
       .replace("#title#", `<title>${options.title}</title>`)
-      .replace("#message#", `<h1>${options.message}</h1>`);
+      .replace("#content#", `<h1>${options.content}</h1>`);
     return callback(null, render);
   });
 });
@@ -47,7 +47,12 @@ app.use((req, res, next) => {
 app.use("/api/", api);
 
 app.get("/", (req, res) => {
-  res.send("i am alive!");
+  // res.send("i am alive!");
+  const options = {
+    title: 'owo',
+    content: 'show me'
+  }
+  res.render('index', options);
 });
 app.all("*", (req, res) => {
   res.status = 404;
