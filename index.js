@@ -22,7 +22,9 @@ app.engine("owo", (filePath, options, callback) => {
     return callback(null, render);
   });
 });
+
 app.use(express.static('./styles'));
+
 app.set("views", "./views");
 app.set("view engine", "owo");
 
