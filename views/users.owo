@@ -17,6 +17,13 @@
             </ul>
         </nav>
     </header>
-    <div>#content#</div>
+    <table id="userTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </table>
 </body>
 </html>
