@@ -15,7 +15,7 @@ body {
 a {
   text-decoration: none;
 }
-
+/*start of nav style*/
 nav > ul {
   display: flex;
   background-color: rgb(255, 192, 222);
@@ -35,3 +35,16 @@ li:hover {
 .active {
   background-color: rgb(205, 164, 241);
 }
+/*end of nav style*/
+/*start of table style*/
+table{
+  margin: 1em;
+  background-color: #fff;
+}
+table, th, td{
+  border: 1px solid black;
+}
+th,td{
+  padding: 1em 0.5em;
+}
+/*end of table style*/
