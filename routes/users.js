@@ -2,11 +2,16 @@ const express = require("express");
 const router = express.Router();
 
 const users = require("../data/users");
+router.use(express.static('./styles'));
 
 router
   .route("/")
   .get((req, res) => {
-    res.json(users);
+    const options={
+      title: 'Users'
+    }
+    res.render('users', options);
+    // res.json(users);
   })
   .post((req, res) => {
     if (req.body.name && req.body.username && req.body.email) {
