@@ -48,3 +48,12 @@ th,td{
   padding: 1em 0.5em;
 }
 /*end of table style*/
+
+/*start of form style*/
+form{
+  margin: 1em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background-color: rgb(255, 192, 222);
+}
+/*end of form style*/
