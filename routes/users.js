@@ -44,7 +44,13 @@ router
   .route("/:id")
   .get((req, res, next) => {
     const user = users.find((u) => u.id == req.params.id);
-    if (user) res.json(user);
+    if (user) {
+      const options = {
+        title: `User ${user.id}`,
+        tableRow: renderPage(user),
+      };
+      res.render("users", options);
+    }
     else next();
   })
   .patch((req, res, next) => {
