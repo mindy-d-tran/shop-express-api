@@ -19,6 +19,7 @@ app.engine("owo", (filePath, options, callback) => {
       .toString()
       .replace("#title#", `<title>${options.title}</title>`)
       .replace("#content#", `<h1>${options.content}</h1>`)
+      .replace("#error-msg#", (`<p>${options.errorMsg || ""}</p>`))
       .replace("#table-row#", options.tableRow);
     return callback(null, render);
   });
