@@ -18,8 +18,8 @@
         </nav>
     </header>
     <main>
-    <form action="/api/users" method="post">
-        <p>Add a new user</p>
+    <form action="/api/products" method="post">
+        <p>Add a new product</p>
         <input
           type="text"
           name="listingName"
