@@ -1,25 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
+const renderPage = require('../utilities/renderPage');
 const users = require("../data/users");
 router.use(express.static("./styles"));
 
 router
   .route("/")
   .get((req, res) => {
-    let test = "";
-    users.forEach((key) => {
-      test+=(`<tr>
-            <td>${key.id}</td>
-            <td>${key.name}</td>
-            <td>${key.username}</td>
-            <td>${key.email}</td>
-        </tr>`);
-    });
-    // console.log(test);
     const options = {
       title: "Users",
-      tableRow: test,
+      tableRow: renderPage(users),
     };
     res.render("users", options);
   })
