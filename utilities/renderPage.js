@@ -4,7 +4,8 @@ function renderPage(arr) {
     arr.forEach((element) => {
       rows += "<tr>";
       for (const key in element) {
-        rows += `<td>${element[key]}</td>`;
+        if(key === "orderList") rows += `<td>[...]</td>`;
+        else rows += `<td>${element[key]}</td>`;
       }
       rows += "</tr>";
     });
