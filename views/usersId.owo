@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    #title#
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="/api/users">Users</a></li>
+                <li><a href="/api/products">Products</a></li>
+                <li><a href="/api/orders">Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+    <h1>User Data</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        #table-row#
+    </table>
+    </main>
+</body>
+</html>
