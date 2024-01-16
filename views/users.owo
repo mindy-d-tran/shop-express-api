@@ -10,7 +10,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="/"><img id="menu-logo" src="/bear_logo_transparent.png" alt="Home Page"/></a></li>
                 <li class="active"><a href="/api/users">Users</a></li>
                 <li><a href="/api/products">Products</a></li>
                 <li><a href="/api/orders">Orders</a></li>
