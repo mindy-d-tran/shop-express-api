@@ -43,13 +43,17 @@
     #error-msg#
     <h1>User Data</h1>
     <table>
+    <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Username</th>
             <th>Email</th>
         </tr>
+    </thead>
+    <tbody>
         #table-row#
+    </tbody>
     </table>
     </main>
 </body>
