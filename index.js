@@ -10,6 +10,7 @@ const api = require("./routes/api");
 
 const app = express();
 const port = 3000;
+app.use(express.static("./assets"));
 
 app.engine("owo", (filePath, options, callback) => {
   fs.readFile(filePath, (err, content) => {
