@@ -40,6 +40,7 @@
         />
         <input type="submit" value="add user" />
     </form>
+    #error-msg#
     <h1>User Data</h1>
     <table>
         <tr>
