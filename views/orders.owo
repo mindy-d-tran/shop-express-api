@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    #title#
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/api/users">Users</a></li>
+                <li><a href="/api/products">Products</a></li>
+                <li class="active"><a href="/api/orders">Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <form action="/api/orders" method="get">
+        <p>Search</p>
+        <input
+          type="text"
+          name="id"
+          id="id"
+          placeholder="order ID"
+        />
+        <input
+          type="text"
+          name="userID"
+          id="userID"
+          placeholder="user ID"
+        />
+        <input
+          type="text"
+          name="trackingNumber"
+          id="trackingNumber"
+          placeholder="tracking number"
+        />
+        <input
+          type="text"
+          name="orderDate"
+          id="orderDate"
+          placeholder="order date"
+        />
+        <input
+          type="text"
+          name="total"
+          id="total"
+          placeholder="total"
+        />
+        <input type="submit" value="find order" />
+    </form>
+    <form action="/api/orders" method="post">
+        <p>Add a new order</p>
+        <input
+          type="text"
+          name="id"
+          id="id"
+          placeholder="order ID"
+        />
+        <input
+          type="text"
+          name="userID"
+          id="userID"
+          placeholder="user ID"
+        />
+        <input
+          type="text"
+          name="trackingNumber"
+          id="trackingNumber"
+          placeholder="tracking number"
+        />
+        <input
+          type="text"
+          name="orderDate"
+          id="orderDate"
+          placeholder="order date"
+        />
+        <input
+          type="text"
+          name="total"
+          id="total"
+          placeholder="total"
+        />
+        <input type="submit" value="find order" />
+    </form>
+    #error-msg#
+    <h1>Order History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User ID</th>
+                <th>Tracking Number</th>
+                <th>Order Date</th>
+                <th>Order List</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            #table-row#
+        </tbody>
+        </table>
+    </main>
+</body>
+</html>
