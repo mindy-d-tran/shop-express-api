@@ -17,7 +17,13 @@ router
   .post((req, res) => {
     if (req.body.name && req.body.username && req.body.email) {
       if (users.find((u) => u.username == req.body.username)) {
-        res.json({ error: "username already taken" });
+        const options = {
+          title: "Users",
+          tableRow: renderPage(users),
+          errorMsg: "Username already taken"
+        };
+        res.render("users", options);
+        // res.json({ error: "username already taken" });
         return;
       }
       if (users.find((e) => e.email == req.body.email)) {
@@ -49,7 +55,7 @@ router
         title: `User ${user.id}`,
         tableRow: renderPage(user),
       };
-      res.render("users", options);
+      res.render("usersId", options);
     }
     else next();
   })
