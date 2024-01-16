@@ -17,6 +17,30 @@
             </ul>
         </nav>
     </header>
+    <main>
+    <form method="post">
+        <p>Add a new user</p>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="name"
+        />
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="username"
+        />
+        <input
+          type="email"
+          name="user-email"
+          id="user-email"
+          placeholder="email"
+        />
+        <button>submit</button>
+    </form>
+    <h1>User Data</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -26,5 +50,6 @@
         </tr>
         #table-row#
     </table>
+    </main>
 </body>
 </html>
