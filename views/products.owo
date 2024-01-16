@@ -18,6 +18,28 @@
         </nav>
     </header>
     <main>
+    <form action="/api/products" method="get">
+        <p>Search</p>
+        <input
+          type="text"
+          name="listingName"
+          id="listingName"
+          placeholder="listing name"
+        />
+        <input
+          type="text"
+          name="price"
+          id="price"
+          placeholder="price"
+        />
+        <input
+          type="text"
+          name="imgSrc"
+          id="imgSrc"
+          placeholder="image source"
+        />
+        <input type="submit" value="find products" />
+    </form>
     <form action="/api/products" method="post">
         <p>Add a new product</p>
         <input
