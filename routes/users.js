@@ -3,7 +3,7 @@ const router = express.Router();
 
 const renderPage = require('../utilities/renderPage');
 const users = require("../data/users");
-router.use(express.static("./styles"));
+router.use(express.static("./style.css"));
 
 router
   .route("/")
@@ -32,7 +32,11 @@ router
       };
 
       users.push(user);
-      res.json(user);
+      const options = {
+        title: "Users",
+        tableRow: renderPage(users),
+      };
+      res.render("users", options);
     } else res.json({ error: "not enough data" });
   });
 
