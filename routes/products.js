@@ -1,7 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
+const renderPage = require('../utilities/renderPage');
 const products = require("../data/products");
+router.use(express.static("./style.css"));
+
+const options = {
+  title: "Products",
+  tableRow: renderPage(products),
+};
 
 router
   .route("/")
@@ -13,12 +20,14 @@ router
       products.forEach((p) => {
         if (p.listingName.includes(productName)) productList.push(p);
       });
-      res.json(productList);
+      options.tableRow = renderPage(productList);
+      res.render('products',options)
       return;
     }
-    res.json(products);
+    res.render('products', options);
   })
   .post((req, res) => {
+    options.errorMsg = "";
     if (req.body.listingName && req.body.price && req.body.imgSrc) {
       const product = {
         id: products.length + 1,
@@ -27,15 +36,26 @@ router
         imgSrc: req.body.imgSrc,
       };
       products.push(product);
-      res.json(product);
-    } else res.json({ error: "not enough data" });
+      options.tableRow = renderPage(products);
+      res.render('products', options);
+      return
+    } else{ 
+      options.errorMsg = "not enough data"
+      res.render('products', options);
+      // res.json({ error: "not enough data" })
+    };
   });
 
 router
   .route("/:id")
   .get((req, res, next) => {
     const product = products.find((p) => p.id == req.params.id);
-    if (product) res.json(product);
+    if (product) {
+      options.title= `Product ${product.id}`;
+      options.tableRow = renderPage(product);
+      res.render("productsId", options);
+      // res.json(product);
+    }
     else next();
   })
   .patch((req, res, next) => {
