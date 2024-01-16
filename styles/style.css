@@ -26,9 +26,8 @@ a {
 /*start of nav style*/
 nav > ul {
   display: flex;
+  align-items: center;
   background-color: var(--light-purple);
-  padding: 0;
-  margin: 0;
   list-style-type: none;
   width: 100vw;
 }
@@ -41,6 +40,12 @@ li:hover:not(.active) {
 
 .active {
   background-color: var(--indigo);
+}
+/* li:first-child{
+  padding: 0 0.5em;
+} */
+#menu-logo{
+  width: 37px;
 }
 /*end of nav style*/
 /*start of table style*/
