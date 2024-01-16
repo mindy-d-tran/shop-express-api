@@ -5,29 +5,27 @@ const renderPage = require('../utilities/renderPage');
 const users = require("../data/users");
 router.use(express.static("./style.css"));
 
+const options = {
+  title: "Users",
+  tableRow: renderPage(users),
+};
+
 router
   .route("/")
   .get((req, res) => {
-    const options = {
-      title: "Users",
-      tableRow: renderPage(users),
-    };
     res.render("users", options);
   })
   .post((req, res) => {
     if (req.body.name && req.body.username && req.body.email) {
       if (users.find((u) => u.username == req.body.username)) {
-        const options = {
-          title: "Users",
-          tableRow: renderPage(users),
-          errorMsg: "Username already taken"
-        };
+        options.errorMsg= "Username already taken";
+
         res.render("users", options);
-        // res.json({ error: "username already taken" });
         return;
       }
       if (users.find((e) => e.email == req.body.email)) {
-        res.json({ error: "email already taken" });
+        options.errorMsg= "Email already taken";
+        res.render("users", options);
         return;
       }
       const user = {
@@ -38,10 +36,7 @@ router
       };
 
       users.push(user);
-      const options = {
-        title: "Users",
-        tableRow: renderPage(users),
-      };
+      options.tableRow = renderPage(users);
       res.render("users", options);
     } else res.json({ error: "not enough data" });
   });
@@ -51,10 +46,8 @@ router
   .get((req, res, next) => {
     const user = users.find((u) => u.id == req.params.id);
     if (user) {
-      const options = {
-        title: `User ${user.id}`,
-        tableRow: renderPage(user),
-      };
+      options.title= `User ${user.id}`;
+      options.tableRow = renderPage(user)
       res.render("usersId", options);
     }
     else next();
