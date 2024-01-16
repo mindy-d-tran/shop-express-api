@@ -18,17 +18,16 @@
         </nav>
     </header>
     <main>
-
-    <h1>User Data</h1>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-        </tr>
-        #table-row#
-    </table>
+        <h1>User Data</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+            #table-row#
+        </table>
     </main>
 </body>
 </html>
