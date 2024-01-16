@@ -48,12 +48,23 @@ li:hover:not(.active) {
 table{
   margin: 1em;
   background-color: white;
+  border-collapse: collapse;
+  /* border-radius: 1.5em; */
+  /* overflow: hidden; */
 }
 table, th, td{
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--dark-purple);
 }
 th,td{
   padding: 1em 0.5em;
+  min-width: 4em;
+  text-align: center;
+}
+tr:hover:not(th:first-child){
+  background-color: var(--peach);
+}
+th{
+  background-color: var(--light-purple);
 }
 /*end of table style*/
 
