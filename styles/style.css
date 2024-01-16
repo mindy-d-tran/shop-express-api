@@ -37,7 +37,6 @@ li {
 }
 li:hover:not(.active) {
   background-color: var(--dark-purple);
-  /* background-color: antiquewhite; */
 }
 
 .active {
@@ -49,11 +48,11 @@ table{
   margin: 1em;
   background-color: white;
   border-collapse: collapse;
-  /* border-radius: 1.5em; */
-  /* overflow: hidden; */
+  border-radius: 1.5em;
+  overflow: hidden;
 }
 table, th, td{
-  border: 1px solid var(--dark-purple);
+  border: 2px solid var(--dark-purple);
 }
 th,td{
   padding: 1em 0.5em;
@@ -67,7 +66,6 @@ th{
   background-color: var(--light-purple);
 }
 /*end of table style*/
-
 /*start of form style*/
 form{
   margin: 1em;
