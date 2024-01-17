@@ -57,7 +57,7 @@
       />
       <input type="submit" value="find order" />
   </form>
-  <form action="/api/orders" method="post">
+  <!-- <form action="/api/orders" method="post">
       <p>Add a new order</p>
       <input
         type="text"
@@ -69,7 +69,7 @@
         type="text"
         name="orderList"
         id="orderList"
-        placeholder="order list (input as and an array for now)"
+        placeholder="order list (separate objects by comma)"
       />
       <input
         type="text"
@@ -78,7 +78,7 @@
         placeholder="tracking number"
       />
       <input type="submit" value="add order" />
-  </form>
+  </form> -->
   #error-msg#
   <table>
       <thead>
