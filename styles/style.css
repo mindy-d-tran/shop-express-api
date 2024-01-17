@@ -20,8 +20,20 @@ body {
   justify-content: center;
   align-items: center;
 }
+h1{
+  color: white;
+}
 a {
   text-decoration: none;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hero-img{
+  width: 35vw;
 }
 /*start of nav style*/
 nav > ul {
