@@ -57,6 +57,7 @@
       />
       <input type="submit" value="find order" />
   </form>
+  <!-- can't figure out how to make a json string to an array-->
   <!-- <form action="/api/orders" method="post">
       <p>Add a new order</p>
       <input
