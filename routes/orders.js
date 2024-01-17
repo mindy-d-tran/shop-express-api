@@ -67,4 +67,18 @@ router
     else next();
   });
 
+router
+  .route("/:id/orderList")
+  .get((req,res, next)=>{
+    const order = orders.find((o) => o.id == req.params.id);
+    // console.log(order);
+    if(order){
+      options.title= `Order ID ${order.id}`;
+      options.tableRow = renderPage(order.orderList);
+      res.render("ordersList", options);
+      // res.json(order.orderList);
+    }
+    else next();
+  })
+
 module.exports = router;
