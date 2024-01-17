@@ -22,9 +22,11 @@ router
       });
       options.tableRow = renderPage(productList, "products");
       res.render('products',options)
+      // res.json(productList);
       return;
     }
     res.render('products', options);
+    // res.json(products);
   })
   .post((req, res) => {
     options.errorMsg = "";
@@ -38,6 +40,7 @@ router
       products.push(product);
       options.tableRow = renderPage(products, "products");
       res.render('products', options);
+      // res.json(product);
       return
     } else{ 
       options.errorMsg = "not enough data"
