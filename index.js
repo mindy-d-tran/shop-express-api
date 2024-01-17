@@ -54,8 +54,8 @@ app.use("/api/", api);
 app.get("/", (req, res) => {
   // res.send("i am alive!");
   const options = {
-    title: 'owo',
-    content: 'show me'
+    title: 'Home',
+    content: 'Welcome'
   }
   res.render('index', options);
 });
