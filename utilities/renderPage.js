@@ -14,7 +14,7 @@ function renderPage(arr) {
       rows += objToTR("", element);
     });
   } else {
-    rows = objToTR(rows, arr);
+    rows += objToTR("", arr);
   }
   return rows;
 }
