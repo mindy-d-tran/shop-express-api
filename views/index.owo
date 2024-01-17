@@ -17,6 +17,10 @@
             </ul>
         </nav>
     </header>
-    <div>#content#</div>
+    
+    <div class="flex">
+        <img id="hero-img" src="/bear_logo_lines.png" alt="hero image"/>
+        #content#
+    </div>
 </body>
 </html>
