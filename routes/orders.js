@@ -15,6 +15,7 @@ router
   .get((req, res) => {
     options.tableRow = renderPage(orders, "orders");
     res.render('orders', options);
+    // res.json(orders)
   })
   .post((req, res) => {
     // resetting the error message if there was one previously
@@ -37,9 +38,11 @@ router
       orders.push(order);
       options.tableRow = renderPage(orders, "orders");
       res.render('products', options);
+      // res.json(order);
     } else{ 
       options.errorMsg = "not enough data";
       res.render('orders', options);
+      // res.json({error: "Not enough Data"})
     }
   });
 
@@ -47,7 +50,6 @@ router
   .route("/:id")
   .get((req, res, next) => {
     const order = orders.find((o) => o.id == req.params.id);
-    // console.log(order);
     if(order){
       options.title= `Order ID ${order.id}`;
       options.tableRow = renderPage(order, "orders");
@@ -71,7 +73,6 @@ router
   .route("/:id/orderList")
   .get((req,res, next)=>{
     const order = orders.find((o) => o.id == req.params.id);
-    // console.log(order);
     if(order){
       options.title= `Order ID ${order.id}`;
       options.tableRow = renderPage(order.orderList, "orders");
