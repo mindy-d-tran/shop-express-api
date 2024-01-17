@@ -13,7 +13,7 @@ const options = {
 router
   .route("/")
   .get((req, res) => {
-    // console.log(orders);
+    options.tableRow = renderPage(orders);
     res.render('orders', options);
   })
   .post((req, res) => {
