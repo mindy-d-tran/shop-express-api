@@ -18,6 +18,7 @@
         </nav>
     </header>
     <main>
+    <h1>User Data</h1>
     <form action="/api/users" method="post">
         <p>Add a new user</p>
         <input
@@ -41,7 +42,6 @@
         <input type="submit" value="add user" />
     </form>
     #error-msg#
-    <h1>User Data</h1>
     <table>
     <thead>
         <tr>
