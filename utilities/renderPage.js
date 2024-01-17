@@ -16,7 +16,6 @@ function renderPage(arr) {
     });
   } else {
     rows+=objToTR(rows, arr);
-  
   }
   return rows;
 }
