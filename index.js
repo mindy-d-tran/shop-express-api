@@ -58,6 +58,7 @@ app.get("/", (req, res) => {
     content: 'Welcome'
   }
   res.render('index', options);
+  // res.send("Welcome")
 });
 app.all("*", (req, res) => {
   res.status = 404;
