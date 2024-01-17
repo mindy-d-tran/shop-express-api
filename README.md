@@ -8,7 +8,9 @@ A GUI to interact with the API. Because it have a GUI, you have to interact with
    - If you click on any value in the Order List field, it will redirect to a new page showing all of the ordered items in that specific order.
 ### Adding Documents
 1. Fill out the form to add a new document to the collection.
-
+### Search bar
+1. Fill out one of the text fields
+2. Click on the button to submit and perform a search query
 ## Future Implementations
 - Make the search bar only have one text field
 - Work on stylization of the website
