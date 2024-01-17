@@ -47,7 +47,13 @@ router
   .route("/:id")
   .get((req, res, next) => {
     const order = orders.find((o) => o.id == req.params.id);
-    if (order) res.json(order);
+    // console.log(order);
+    if(order){
+      options.title= `Order ID ${order.id}`;
+      options.tableRow = renderPage(order);
+      res.render("ordersId", options);
+      // res.json(order);
+    }
     else next();
   })
   .delete((req, res, next) => {
