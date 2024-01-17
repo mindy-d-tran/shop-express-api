@@ -7,13 +7,13 @@ router.use(express.static("./style.css"));
 
 const options = {
   title: "Order History",
-  tableRow: renderPage(orders),
+  tableRow: renderPage(orders, "orders"),
 };
 
 router
   .route("/")
   .get((req, res) => {
-    options.tableRow = renderPage(orders);
+    options.tableRow = renderPage(orders, "orders");
     res.render('orders', options);
   })
   .post((req, res) => {
@@ -35,7 +35,7 @@ router
         ),
       };
       orders.push(order);
-      options.tableRow = renderPage(orders);
+      options.tableRow = renderPage(orders, "orders");
       res.render('products', options);
     } else{ 
       options.errorMsg = "not enough data";
@@ -50,7 +50,7 @@ router
     // console.log(order);
     if(order){
       options.title= `Order ID ${order.id}`;
-      options.tableRow = renderPage(order);
+      options.tableRow = renderPage(order, "orders");
       res.render("ordersId", options);
       // res.json(order);
     }
@@ -74,7 +74,7 @@ router
     // console.log(order);
     if(order){
       options.title= `Order ID ${order.id}`;
-      options.tableRow = renderPage(order.orderList);
+      options.tableRow = renderPage(order.orderList, "orders");
       res.render("ordersList", options);
       // res.json(order.orderList);
     }

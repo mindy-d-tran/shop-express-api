@@ -7,7 +7,7 @@ router.use(express.static("./style.css"));
 
 const options = {
   title: "Products",
-  tableRow: renderPage(products),
+  tableRow: renderPage(products, "products"),
 };
 
 router
@@ -20,7 +20,7 @@ router
       products.forEach((p) => {
         if (p.listingName.includes(productName)) productList.push(p);
       });
-      options.tableRow = renderPage(productList);
+      options.tableRow = renderPage(productList, "products");
       res.render('products',options)
       return;
     }
@@ -36,7 +36,7 @@ router
         imgSrc: req.body.imgSrc,
       };
       products.push(product);
-      options.tableRow = renderPage(products);
+      options.tableRow = renderPage(products, "products");
       res.render('products', options);
       return
     } else{ 
@@ -52,7 +52,7 @@ router
     const product = products.find((p) => p.id == req.params.id);
     if (product) {
       options.title= `Product ${product.id}`;
-      options.tableRow = renderPage(product);
+      options.tableRow = renderPage(product, "products");
       res.render("productsId", options);
       // res.json(product);
     }

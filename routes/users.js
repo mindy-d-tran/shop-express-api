@@ -7,7 +7,7 @@ router.use(express.static("./style.css"));
 
 const options = {
   title: "Users",
-  tableRow: renderPage(users),
+  tableRow: renderPage(users, "users"),
 };
 
 router
@@ -36,7 +36,7 @@ router
       };
 
       users.push(user);
-      options.tableRow = renderPage(users);
+      options.tableRow = renderPage(users, "users");
       res.render("users", options);
     } else res.json({ error: "not enough data" });
   });
@@ -47,7 +47,7 @@ router
     const user = users.find((u) => u.id == req.params.id);
     if (user) {
       options.title= `User ${user.id}`;
-      options.tableRow = renderPage(user)
+      options.tableRow = renderPage(user, "users")
       res.render("usersId", options);
     }
     else next();
