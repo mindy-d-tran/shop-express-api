@@ -1,14 +1,24 @@
 const express = require("express");
 const router = express.Router();
 
+const renderPage = require('../utilities/renderPage');
 const orders = require("../data/orders");
+router.use(express.static("./style.css"));
+
+const options = {
+  title: "Order History",
+  tableRow: renderPage(orders),
+};
 
 router
   .route("/")
   .get((req, res) => {
-    res.json(orders);
+    // console.log(orders);
+    res.render('orders', options);
   })
   .post((req, res) => {
+    // resetting the error message if there was one previously
+    options.errorMsg = "";
     if (req.body.userId && req.body.orderList && req.body.trackingNumber) {
       const date = new Date();
       const order = {
@@ -25,8 +35,12 @@ router
         ),
       };
       orders.push(order);
-      res.json(order);
-    } else res.json({ error: "not enough data" });
+      options.tableRow = renderPage(orders);
+      res.render('products', options);
+    } else{ 
+      options.errorMsg = "not enough data";
+      res.render('orders', options);
+    }
   });
 
 router
