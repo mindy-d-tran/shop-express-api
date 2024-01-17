@@ -31,7 +31,7 @@
           id="listingName"
           placeholder="listing name"
         />
-        <input
+        <!--<input
           type="text"
           name="price"
           id="price"
@@ -42,7 +42,7 @@
           name="imgSrc"
           id="imgSrc"
           placeholder="image source"
-        />
+        />-->
         <input type="submit" value="find products" />
     </form>
     <form action="/api/products" method="post">
