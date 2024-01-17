@@ -14,18 +14,20 @@ router
   .route("/")
   .get((req, res) => {
     res.render("users", options);
+    // res.json(users)
   })
   .post((req, res) => {
     if (req.body.name && req.body.username && req.body.email) {
       if (users.find((u) => u.username == req.body.username)) {
         options.errorMsg= "Username already taken";
-
         res.render("users", options);
+        // res.json({error: "Username already taken"})
         return;
       }
       if (users.find((e) => e.email == req.body.email)) {
         options.errorMsg= "Email already taken";
         res.render("users", options);
+        // res.json({error: "Email already taken"})
         return;
       }
       const user = {
@@ -38,6 +40,7 @@ router
       users.push(user);
       options.tableRow = renderPage(users, "users");
       res.render("users", options);
+      // res.json(user)
     } else res.json({ error: "not enough data" });
   });
 
@@ -49,6 +52,7 @@ router
       options.title= `User ${user.id}`;
       options.tableRow = renderPage(user, "users")
       res.render("usersId", options);
+      // res.json(user)
     }
     else next();
   })
