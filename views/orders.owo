@@ -73,7 +73,7 @@
           id="trackingNumber"
           placeholder="tracking number"
         />
-        <input type="submit" value="find order" />
+        <input type="submit" value="add order" />
     </form>
     #error-msg#
     <table>
