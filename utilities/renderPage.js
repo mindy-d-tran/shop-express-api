@@ -1,20 +1,22 @@
+const objToTR = (str, obj)=>{
+  str+="<tr>";
+  for (const key in obj) {
+    if(key === "orderList") str += `<td>[...]</td>`;
+    else str += `<td>${obj[key]}</td>`;
+  }
+  str+="</tr>"
+  return str;
+}
+
 function renderPage(arr) {
   let rows = "";
   if (arr.length) {
     arr.forEach((element) => {
-      rows += "<tr>";
-      for (const key in element) {
-        if(key === "orderList") rows += `<td>[...]</td>`;
-        else rows += `<td>${element[key]}</td>`;
-      }
-      rows += "</tr>";
+      rows+= objToTR(rows, element)
     });
   } else {
-    rows += "<tr>";
-    for (const key in arr) {
-      rows += `<td>${arr[key]}</td>`;
-    }
-    rows += "</tr>";
+    rows+=objToTR(rows, arr);
+  
   }
   return rows;
 }
