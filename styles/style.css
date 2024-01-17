@@ -87,9 +87,17 @@ th{
 /*end of table style*/
 /*start of form style*/
 form{
+  width: max-content;
   margin: 1em;
   padding: 0.5em;
   border-radius: 0.5em;
   background-color: var(--peach);
+}
+input[type="submit"]{
+  background-color: var(--indigo);
+  color: white;
+  padding: 0.25em 0.5em;
+  border: none;
+  border-radius: 0.75em;
 }
 /*end of form style*/
